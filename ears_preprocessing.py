@@ -7,7 +7,7 @@ import numpy as np
 import pickle
 
 # constants
-IMG_SIZE = 100
+IMG_SIZE = 120
 DATASET_PATH = "awe"
 
 def retrieve_image_data(dir_path, image_name, img_format):
@@ -38,7 +38,7 @@ for filename in os.listdir(DATASET_PATH):
             for sample_name in samples:
                 resized_img = retrieve_image_data(full_path, sample_name, 'png')
                 if resized_img is not None:
-                    data.append([resized_img, ethnicity])
+                    data.append([resized_img, ethnicity - 1])
 
 # for better balance reshuffle data
 random.shuffle(data)

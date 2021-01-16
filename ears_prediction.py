@@ -17,19 +17,15 @@ X = normalize(X)
 
 def build_model():
     model = Sequential()
-    model.add(Conv2D(64, (3,3), input_shape = X.shape[1:]))
-    model.add(Activation("relu"))
+    model.add(Conv2D(32, kernel_size=(3,3), activation="relu", input_shape = X.shape[1:]))
     model.add(MaxPooling2D(pool_size=(2,2)))
 
-    model.add(Conv2D(64, (3,3)))
-    model.add(Activation("relu"))
+    model.add(Conv2D(32, activation="relu", kernel_size=(3,3)))
     model.add(MaxPooling2D(pool_size=(2,2)))
 
     model.add(Flatten())
-    model.add(Dense(64, activation="relu"))
-    model.add(Dense(64, activation="relu"))
-    model.add(Dense(7, activation="softmax"))
-    model.add(Activation('sigmoid'))
+    model.add(Dense(128, activation="relu"))
+    model.add(Dense(6, activation="softmax")) # 6 ethnicities
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
     return model
 

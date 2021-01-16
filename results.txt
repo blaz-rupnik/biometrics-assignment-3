@@ -1,0 +1,3 @@
+Using sigmoid activator at the end:
+For 100x100 images: Average: Loss: 1.5553209066390992, Acc: 0.6101010084152222
+For 200x200 images: Average: Loss: 1.5341087937355042, Acc: 0.6313131332397461
