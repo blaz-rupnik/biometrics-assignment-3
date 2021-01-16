@@ -26,9 +26,9 @@ def build_model():
     model.add(MaxPooling2D(pool_size=(2,2)))
 
     model.add(Flatten())
-    model.add(Dense(64))
-
-    model.add(Dense(7))
+    model.add(Dense(64, activation="relu"))
+    model.add(Dense(64, activation="relu"))
+    model.add(Dense(7, activation="softmax"))
     model.add(Activation('sigmoid'))
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
     return model
