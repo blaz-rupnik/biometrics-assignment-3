@@ -3,3 +3,4 @@ Ear recognition development using CNN
 
 Required packages:
 - tensorflow (requires 64bit python interpreter)
+- opencv-python
